@@ -30,8 +30,24 @@
             </Grid.ColumnDefinitions>
             <!-- Timer Display Area -->
             <Border Opacity="0.1" Background="Black" Grid.Row="1" Grid.Column="1" CornerRadius="12"></Border>
-            <StackPanel Grid.Row="1" Grid.Column="1" Margin="12" >
-
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="12" VerticalAlignment="Center">
+                <!--Timer Mode Button Row-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Pomodoro" Width="100" Height="30" Margin="6"/>
+                    <Button Content="Short Break" Width="100" Height="30" Margin="6"/>
+                </StackPanel>
+                <!--Timer text-->
+                <TextBlock x:Name="tbDisplay" Text="00:00:00" FontSize="64" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <!--Timer Controls-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btnTimerToggle" Grid.Column="1" Content="Start" Width="100" Height="30" Margin="6" Click="ClickedTimerToggle"/>
+                    <Button Grid.Column="2" Content="End" Width="50" Height="30" Margin="6" HorizontalAlignment="Right"/>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>
